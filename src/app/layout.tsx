@@ -28,6 +28,11 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://chunkware.com/" />
 
+        {/* Favicon & touch icon */}
+        <link rel="icon" href="/logo.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaTitle} />
