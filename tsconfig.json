@@ -20,6 +20,8 @@
     "noImplicitOverride": true,
     "baseUrl": ".",
     "paths": {
+      "@components/*": ["./src/components/*"],
+      "@ui/*": ["./src/components/ui/*"],
       "@/*": ["./src/*"]
     },
     // Some stricter flags (disabled by default)
