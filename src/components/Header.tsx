@@ -9,9 +9,13 @@ export const Header = () => {
             href="https://github.com/chunkware"
             target="_blank"
             rel="noreferrer noopener"
-            className="text-sm font-semibold tracking-widest opacity-90"
+            className="inline-flex items-center gap-3 opacity-95"
           >
-            {texts.brandName}
+            <img
+              src="/logo_light__transparent.svg"
+              alt="chunkware.com logo"
+              className="h-8 w-auto block"
+            />
           </a>
         </div>
 
