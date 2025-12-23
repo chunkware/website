@@ -2,10 +2,9 @@ const config = {
   brandName: "Chunkware",
   nav: {
     items: [
-      //   { title: "Projects", href: "/showcase" },
-      //   { title: "Docs", href: "/docs" },
+      // { title: "Projects", href: "/showcase" },
+      // { title: "Docs", href: "/docs" },
     ] as Array<{ title: string; href?: string }>,
-    cta_join_discord: "Join Community",
   },
   hero: {
     label: "Coming Soon",
@@ -19,14 +18,14 @@ const config = {
     aria_label: "Technology stack",
     items: [
       {
-        src: "/icons/devicon--kotlin.svg",
-        title: "Kotlin",
-        href: "https://kotlinlang.org",
-      },
-      {
         src: "/icons/mdi--minecraft.svg",
         title: "Minecraft",
         href: "https://minecraft.net",
+      },
+      {
+        src: "/icons/devicon--kotlin.svg",
+        title: "Kotlin",
+        href: "https://kotlinlang.org",
       },
       {
         src: "/icons/devicon--java.svg",
@@ -34,16 +33,15 @@ const config = {
         href: "https://java.com",
       },
       {
+        src: "/icons/devicon--gradle.svg",
+        title: "Gradle",
+        href: "https://gradle.org",
+      },
+      {
         src: "/icons/devicon--typescript.svg",
         title: "TypeScript",
         href: "https://www.typescriptlang.org",
       },
-      {
-        src: "/icons/devicon--tailwindcss.svg",
-        title: "Tailwind CSS",
-        href: "https://tailwindcss.com",
-      },
-      { src: "/icons/devicon--bun.svg", title: "Bun", href: "https://bun.sh" },
       {
         src: "/icons/devicon--javascript.svg",
         title: "JavaScript",
@@ -55,10 +53,11 @@ const config = {
         href: "https://nextjs.org",
       },
       {
-        src: "/icons/devicon--gradle.svg",
-        title: "Gradle",
-        href: "https://gradle.org",
+        src: "/icons/devicon--tailwindcss.svg",
+        title: "Tailwind CSS",
+        href: "https://tailwindcss.com",
       },
+      { src: "/icons/devicon--bun.svg", title: "Bun", href: "https://bun.sh" },
       {
         src: "/icons/devicon--github.svg",
         title: "GitHub",
@@ -75,10 +74,6 @@ const config = {
   footer: {
     made_with: "Crafted with ❤️ and code by kznlabs",
     credit_name: "kznlabs",
-  },
-  misc: {
-    built_by_line:
-      "Chunkware — Premium Minecraft plugins & server solutions built by enthusiasts.",
   },
 }
 
