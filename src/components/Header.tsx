@@ -12,9 +12,9 @@ export const Header = () => {
             className="inline-flex items-center gap-3 opacity-95"
           >
             <img
-              src="/logo_light__transparent.svg"
+              src="/icon_light__transparent.svg"
               alt="chunkware.com logo"
-              className="h-8 w-auto block"
+              className="h-12 w-auto block"
             />
           </a>
         </div>
