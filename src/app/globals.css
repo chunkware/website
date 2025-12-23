@@ -1,2 +1,17 @@
 @import "tailwindcss";
 @import "./cssreset.css" layer(base);
+
+:root {
+  --accent: #48A0F3;
+  --bg: #1F1D1D;
+}
+
+html, body {
+  background-color: var(--bg);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make images using accent fallback where we use variables in inline styles */
+
