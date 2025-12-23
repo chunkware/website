@@ -30,6 +30,12 @@ export default function Preloader() {
           /* noop */
         }
         didRemove = true
+        // Signal to the app that the preloader finished
+        try {
+          window.dispatchEvent(new CustomEvent("preloader:done"))
+        } catch (e) {
+          /* noop */
+        }
       }, FADE_DURATION_MS)
     }
 
