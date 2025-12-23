@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState, type CSSProperties, type FC } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
@@ -21,11 +21,11 @@ export interface SplitTextProps {
   threshold?: number
   rootMargin?: string
   tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span"
-  textAlign?: React.CSSProperties["textAlign"]
+  textAlign?: CSSProperties["textAlign"]
   onLetterAnimationComplete?: () => void
 }
 
-export const SplitText: React.FC<SplitTextProps> = ({
+export const SplitText: FC<SplitTextProps> = ({
   text,
   className = "",
   delay = 100,
@@ -234,7 +234,7 @@ export const SplitText: React.FC<SplitTextProps> = ({
   )
 
   const renderTag = () => {
-    const style: React.CSSProperties = {
+    const style: CSSProperties = {
       textAlign,
       wordWrap: "break-word",
       willChange: "transform, opacity",

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { type ReactNode } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -21,7 +21,7 @@ export function Button({
   ...otherProps
 }: {
   borderRadius?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   as?: any;
   containerClassName?: string;
   borderClassName?: string;
@@ -47,7 +47,7 @@ export function Button({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-8 w-8 sm:h-10 sm:w-10 bg-[radial-gradient(#0ea5e9_40%,transparent_60%)] opacity-[0.8]",
+              "h-8 w-8 sm:h-10 sm:w-10 bg-[radial-gradient(var(--accent,#48A0F3)_40%,transparent_60%)] opacity-[0.95]",
               borderClassName,
             )}
           />
@@ -56,7 +56,7 @@ export function Button({
 
       <div
         className={cn(
-          "relative flex items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl px-4 py-2",
+          "relative flex items-center justify-center border border-white/10 bg-[rgba(8,8,10,0.6)] text-sm text-white antialiased backdrop-blur-xl px-4 py-2",
           className,
         )}
         style={{
@@ -76,7 +76,7 @@ const MovingBorder = ({
   ry,
   ...otherProps
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   duration?: number;
   rx?: string;
   ry?: string;

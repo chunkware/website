@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import React, { memo, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type DependencyList, type Key, type ReactNode, type RefObject } from "react"
 
 export type LogoItem =
   | {
-      node: React.ReactNode
+      node: ReactNode
       href?: string
       title?: string
       ariaLabel?: string
@@ -32,10 +32,10 @@ export interface LogoLoopProps {
   fadeOut?: boolean
   fadeOutColor?: string
   scaleOnHover?: boolean
-  renderItem?: (item: LogoItem, key: React.Key) => React.ReactNode
+  renderItem?: (item: LogoItem, key: Key) => ReactNode
   ariaLabel?: string
   className?: string
-  style?: React.CSSProperties
+  style?: CSSProperties
 }
 
 const ANIMATION_CONFIG = {
@@ -52,8 +52,8 @@ const cx = (...parts: Array<string | false | null | undefined>) =>
 
 const useResizeObserver = (
   callback: () => void,
-  elements: Array<React.RefObject<Element | null>>,
-  dependencies: React.DependencyList
+  elements: Array<RefObject<Element | null>>,
+  dependencies: DependencyList
 ) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
@@ -79,9 +79,9 @@ const useResizeObserver = (
 }
 
 const useImageLoader = (
-  seqRef: React.RefObject<HTMLUListElement | null>,
+  seqRef: RefObject<HTMLUListElement | null>,
   onLoad: () => void,
-  dependencies: React.DependencyList
+  dependencies: DependencyList
 ) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll("img") ?? []
@@ -119,7 +119,7 @@ const useImageLoader = (
 }
 
 const useAnimationLoop = (
-  trackRef: React.RefObject<HTMLDivElement | null>,
+  trackRef: RefObject<HTMLDivElement | null>,
   targetVelocity: number,
   seqWidth: number,
   seqHeight: number,
@@ -201,7 +201,7 @@ const useAnimationLoop = (
   }, [targetVelocity, seqWidth, seqHeight, isHovered, hoverSpeed, isVertical])
 }
 
-export const LogoLoop = React.memo<LogoLoopProps>(
+export const LogoLoop = memo<LogoLoopProps>(
   ({
     logos,
     speed = 120,
@@ -311,7 +311,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
           "--logoloop-gap": `${gap}px`,
           "--logoloop-logoHeight": `${logoHeight}px`,
           ...(fadeOutColor && { "--logoloop-fadeColor": fadeOutColor }),
-        } as React.CSSProperties),
+        } as CSSProperties),
       [gap, logoHeight, fadeOutColor]
     )
 
@@ -340,7 +340,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     }, [effectiveHoverSpeed])
 
     const renderLogoItem = useCallback(
-      (item: LogoItem, key: React.Key) => {
+      (item: LogoItem, key: Key) => {
         if (renderItem) {
           return (
             <li
@@ -457,7 +457,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
     )
 
     const containerStyle = useMemo(
-      (): React.CSSProperties => ({
+      (): CSSProperties => ({
         width: isVertical
           ? toCssLength(width) === "100%"
             ? undefined
